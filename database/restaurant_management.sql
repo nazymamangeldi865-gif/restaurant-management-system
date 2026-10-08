@@ -20,7 +20,7 @@ CREATE TABLE users (
 GO
 
     create table studentd(student_id Int Primary key,
-    aty NVARCHAR(100)
+    aty NVARCHAR(100)flsdsdksfmk
 
 CREATE TABLE restaurants (
     restaurant_id INT IDENTITY(1,1) PRIMARY KEY,
