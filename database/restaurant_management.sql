@@ -5,7 +5,7 @@ GO
 USE meiramkhana_db;
 GO
 
-
+create table
 
 CREATE TABLE users (
     user_id INT IDENTITY(1,1) PRIMARY KEY,
