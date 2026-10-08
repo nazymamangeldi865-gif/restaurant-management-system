@@ -1,0 +1,186 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram id="class-corrected" name="Class Diagram">
+    <mxGraphModel dx="1713" dy="1032" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=20;" value="Class Diagram — Мейрамханалар базасын басқару ақпараттық жүйесі" vertex="1">
+          <mxGeometry height="40" width="980" x="280" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="User" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;html=1;whiteSpace=wrap;" value="User&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;- userId: int&lt;/div&gt;&lt;div&gt;&amp;nbsp;- name: string&lt;/div&gt;&lt;div&gt;&amp;nbsp;- email: string&lt;/div&gt;&lt;div&gt;&amp;nbsp;- password: string&lt;/div&gt;&lt;div&gt;&amp;nbsp;- role: string + login() + logout() + updateProfile()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="165" width="220" x="620" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ClientTop" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;html=1;whiteSpace=wrap;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Client&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&amp;nbsp; phone: string - loyaltyPoints: int + searchRestaurant() + viewMenu() + bookTable() + createOrder() + leaveReview()" vertex="1">
+          <mxGeometry height="175" width="220" x="185" y="280" as="geometry">
+            <mxRectangle height="30" width="670" x="180" y="280" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Manager" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;html=1;whiteSpace=wrap;" value="Manager&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- position: string&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;+ manageRestaurant() + manageMenu() + manageTables() + viewAnalytics()&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="220" x="440" y="292.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Waiter" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;html=1;whiteSpace=wrap;" value="Waiter&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;- shift: string + viewBookings() + updateBookingStatus() + viewOrders() + updateOrderStatus()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="220" x="765" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="Admin" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;html=1;whiteSpace=wrap;" value="Admin&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- accessLevel: int&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ manageUsers()&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ moderateRestaurants()&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;+ manageSystemSettings() + viewLogs()&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="220" x="1030" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="Table" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;html=1;whiteSpace=wrap;" value="Table&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;- tableId: int&amp;nbsp;&lt;/div&gt;&lt;div&gt;- tableNumber: int&amp;nbsp;&lt;/div&gt;&lt;div&gt;- capacity: int&amp;nbsp;&lt;/div&gt;&lt;div&gt;- status: string + checkAvailability() + updateStatus()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="220" x="130" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="Restaurant" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;html=1;whiteSpace=wrap;" value="Restaurant&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- restaurantId:&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;int - name: string&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;- address: string&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- cuisineType: string&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- rating: double - workingHours: string + addRestaurant() + updateRestaurant() + viewRestaurant()&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="205" width="250" x="450" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="Menu" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;html=1;whiteSpace=wrap;" value="Menu&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;- menuId: int&amp;nbsp;&lt;/div&gt;&lt;div&gt;- title: string&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ addCategory()&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ updateMenu()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="190" x="740" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="Notion" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;html=1;whiteSpace=wrap;" value="Notion&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- orderId: int&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;- orderDate: Date&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;- status: string&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- totalAmount()&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="135" width="190" x="980" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="MenuItem" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;html=1;whiteSpace=wrap;" value="MenuItem&amp;nbsp;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- itemId: int&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- name: string&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- price: double&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- description: string&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;- category: string&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ addItem() + updateItem() + removeItem()&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="180" width="220" x="1180" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="Client" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;html=1;whiteSpace=wrap;" value="Client" vertex="1">
+          <mxGeometry height="60" width="170" x="110" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="Booking" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;html=1;whiteSpace=wrap;" value="Booking&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- bookingId: int&lt;/div&gt;&lt;div&gt;&amp;nbsp;- date: Date&lt;/div&gt;&lt;div&gt;&amp;nbsp;- time: Time&lt;/div&gt;&lt;div&gt;&amp;nbsp;- status: string&lt;/div&gt;&lt;div&gt;&amp;nbsp;- numberOfGuests: int + createBooking() + cancelBooking() + confirmBooking() + updateStatus()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="195" width="220" x="420" y="845" as="geometry" />
+        </mxCell>
+        <mxCell id="Order" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;html=1;whiteSpace=wrap;" value="Order&lt;div&gt;&amp;nbsp;- orderId: int&lt;/div&gt;&lt;div&gt;&amp;nbsp;-&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;orderDate: Date&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;- status: string&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- totalAmount: double&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;+ createOrder()&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ updateOrderStatus()&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;+ calculateTotal()&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="165" width="220" x="815" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="OrderItem" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;html=1;whiteSpace=wrap;" value="OrderItem&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- orderItemId: int&lt;/div&gt;&lt;div&gt;&amp;nbsp;- quantity: int&lt;/div&gt;&lt;div&gt;&amp;nbsp;- unitPrice: double&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ calculateSubtotal()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="125" width="220" x="1010" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="Payment" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;html=1;whiteSpace=wrap;" value="Payment&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;paymentId: int&amp;nbsp;&lt;/div&gt;&lt;div&gt;- amount: double&lt;/div&gt;&lt;div&gt;&amp;nbsp;- paymentMethod: string&amp;nbsp;&lt;/div&gt;&lt;div&gt;- status: string&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ processPayment()&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ refundPayment()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="145" width="220" x="1210" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="Review" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;html=1;whiteSpace=wrap;" value="Review&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;- reviewId: int&lt;/div&gt;&lt;div&gt;&amp;nbsp;- rating: int&lt;/div&gt;&lt;div&gt;&amp;nbsp;- comment: string&amp;nbsp;&lt;/div&gt;&lt;div&gt;- createdAt: Date&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ addReview()&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ editReview()&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ deleteReview()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="165" width="220" x="160" y="845" as="geometry" />
+        </mxCell>
+        <mxCell id="Notification" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;html=1;whiteSpace=wrap;" value="Notification&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;- notificationId: int&lt;/div&gt;&lt;div&gt;&amp;nbsp;- message: string - date: Date - type: string + sendNotification()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="220" x="660" y="895" as="geometry" />
+        </mxCell>
+        <mxCell id="inh1" edge="1" parent="1" source="ClientTop" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;" target="User" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inh2" edge="1" parent="1" source="Manager" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;" target="User" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inh3" edge="1" parent="1" source="Waiter" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;" target="User" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inh4" edge="1" parent="1" source="Admin" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;" target="User" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep1" edge="1" parent="1" source="Manager" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;" target="Restaurant" value="«басқарады»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep2" edge="1" parent="1" source="Waiter" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;" target="Menu" value="«қызмет көрсетеді»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep3" edge="1" parent="1" source="Waiter" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;" target="Notion" value="«қызмет көрсетеді»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep4" edge="1" parent="1" source="Admin" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;" target="User" value="«басқарады»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" edge="1" parent="1" source="Table" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;" target="Restaurant" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" edge="1" parent="1" source="Restaurant" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;" target="Menu" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" edge="1" parent="1" source="Menu" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;" target="Notion" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" edge="1" parent="1" source="Notion" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;" target="MenuItem" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" edge="1" parent="1" source="Client" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;" target="Table" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" edge="1" parent="1" source="Client" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;" target="Booking" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a7" edge="1" parent="1" source="Booking" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;" target="Restaurant" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a8" edge="1" parent="1" source="Booking" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;" target="Order" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a9" edge="1" parent="1" source="Order" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;" target="OrderItem" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a10" edge="1" parent="1" source="OrderItem" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;" target="Payment" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a11" edge="1" parent="1" source="Client" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;" target="Review" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a12" edge="1" parent="1" source="Review" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;" target="Restaurant" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a13" edge="1" parent="1" source="Client" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;" target="Notification" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a14" edge="1" parent="1" source="Notification" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;" target="Booking" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l1" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="*" vertex="1">
+          <mxGeometry height="24" width="45" x="350" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="l2" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="1" vertex="1">
+          <mxGeometry height="24" width="45" x="420" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="l3" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="1" vertex="1">
+          <mxGeometry height="24" width="45" x="705" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="l4" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="1" vertex="1">
+          <mxGeometry height="24" width="45" x="725" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="l5" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="1" vertex="1">
+          <mxGeometry height="24" width="45" x="940" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="l6" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="1" vertex="1">
+          <mxGeometry height="24" width="45" x="955" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="l7" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="*" vertex="1">
+          <mxGeometry height="24" width="45" x="1170" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="l8" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="*" vertex="1">
+          <mxGeometry height="24" width="45" x="1150" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="l9" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="1" vertex="1">
+          <mxGeometry height="24" width="45" x="300" y="705" as="geometry" />
+        </mxCell>
+        <mxCell id="l10" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="*" vertex="1">
+          <mxGeometry height="24" width="45" x="300" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="l11" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="1" vertex="1">
+          <mxGeometry height="24" width="45" x="310" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="l12" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="*" vertex="1">
+          <mxGeometry height="24" width="45" x="405" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="l13" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="*" vertex="1">
+          <mxGeometry height="24" width="45" x="655" y="725" as="geometry" />
+        </mxCell>
+        <mxCell id="l14" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="1" vertex="1">
+          <mxGeometry height="24" width="45" x="715" y="725" as="geometry" />
+        </mxCell>
+        <mxCell id="l15" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="1" vertex="1">
+          <mxGeometry height="24" width="45" x="980" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="l16" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="*" vertex="1">
+          <mxGeometry height="24" width="45" x="990" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="l17" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="1" vertex="1">
+          <mxGeometry height="24" width="45" x="1110" y="825" as="geometry" />
+        </mxCell>
+        <mxCell id="l18" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;" value="0..1" vertex="1">
+          <mxGeometry height="24" width="45" x="1140" y="825" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

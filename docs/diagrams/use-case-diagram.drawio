@@ -1,0 +1,196 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="Use Case Diagram" id="0">
+    <mxGraphModel dx="1869" dy="1125" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="a1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Клиент" vertex="1">
+          <mxGeometry height="120" width="90" x="30" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Мейрамхана менеджері" vertex="1">
+          <mxGeometry height="120" width="90" x="60" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Даяшы" vertex="1">
+          <mxGeometry height="120" width="90" x="1400" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Жүйе әкімшісі" vertex="1">
+          <mxGeometry height="120" width="90" x="1400" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="u1" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Жүйеге кіру" vertex="1">
+          <mxGeometry height="50" width="220" x="240" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="u2" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Мейрамханаларды іздеу" vertex="1">
+          <mxGeometry height="50" width="220" x="270" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="u3" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Сүзгілеу" vertex="1">
+          <mxGeometry height="50" width="220" x="250" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="u4" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Мәзірді көру" vertex="1">
+          <mxGeometry height="50" width="220" x="250" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="u5" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Бос үстелдерді көру" vertex="1">
+          <mxGeometry height="50" width="220" x="250" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="u6" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Онлайн брондау" vertex="1">
+          <mxGeometry height="50" width="220" x="240" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="u7" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Брондау тарихы" vertex="1">
+          <mxGeometry height="50" width="220" x="220" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="u8" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Алдын ала тапсырыс" vertex="1">
+          <mxGeometry height="50" width="220" x="220" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="u9" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Пікір және рейтинг" vertex="1">
+          <mxGeometry height="50" width="220" x="220" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="u10" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Бос үстелді тексеру" vertex="1">
+          <mxGeometry height="50" width="220" x="610" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="u11" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Брондауды тіркеу" vertex="1">
+          <mxGeometry height="50" width="220" x="610" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="u12" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Хабарлама жіберу" vertex="1">
+          <mxGeometry height="50" width="220" x="610" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="u13" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Мейрамхана ақпаратын басқару" vertex="1">
+          <mxGeometry height="50" width="220" x="410" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="u14" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Мәзірді басқару" vertex="1">
+          <mxGeometry height="50" width="220" x="460" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="u15" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Үстелдерді басқару" vertex="1">
+          <mxGeometry height="50" width="220" x="300" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="u16" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Брондауларды басқару" vertex="1">
+          <mxGeometry height="50" width="220" x="240" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="u17" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Есеп және аналитика" vertex="1">
+          <mxGeometry height="50" width="220" x="480" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="u18" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Жаңа брондауларды көру" vertex="1">
+          <mxGeometry height="50" width="220" x="1080" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="u19" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Брондау статусын өзгерту" vertex="1">
+          <mxGeometry height="50" width="220" x="1050" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="u20" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Тапсырыстарды көру" vertex="1">
+          <mxGeometry height="50" width="220" x="1070" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="u21" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Тапсырыс статусын өзгерту" vertex="1">
+          <mxGeometry height="50" width="220" x="1060" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="u22" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Пайдаланушыларды басқару" vertex="1">
+          <mxGeometry height="50" width="220" x="1110" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="u23" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Мейрамханаларды модерациялау" vertex="1">
+          <mxGeometry height="50" width="220" x="970" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="u24" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Жүйе баптаулары" vertex="1">
+          <mxGeometry height="50" width="220" x="1070" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="u25" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Логтарды көру" vertex="1">
+          <mxGeometry height="50" width="220" x="1100" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="a1" style="endArrow=none;html=1;" target="u1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="a1" style="endArrow=none;html=1;" target="u2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="a1" style="endArrow=none;html=1;" target="u3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="a1" style="endArrow=none;html=1;" target="u4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="a1" style="endArrow=none;html=1;" target="u5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="a1" style="endArrow=none;html=1;" target="u6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="a1" style="endArrow=none;html=1;" target="u7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="a1" style="endArrow=none;html=1;" target="u8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="a1" style="endArrow=none;html=1;" target="u9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="a2" style="endArrow=none;html=1;" target="u13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="a2" style="endArrow=none;html=1;" target="u14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="a2" style="endArrow=none;html=1;" target="u15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="a2" style="endArrow=none;html=1;" target="u16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="a2" style="endArrow=none;html=1;" target="u17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="a3" style="endArrow=none;html=1;" target="u18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="a3" style="endArrow=none;html=1;" target="u19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="a3" style="endArrow=none;html=1;" target="u20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="a3" style="endArrow=none;html=1;" target="u21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" edge="1" parent="1" source="a4" style="endArrow=none;html=1;" target="u22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" edge="1" parent="1" source="a4" style="endArrow=none;html=1;" target="u23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" edge="1" parent="1" source="a4" style="endArrow=none;html=1;" target="u24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" edge="1" parent="1" source="a4" style="endArrow=none;html=1;" target="u25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e23" edge="1" parent="1" source="u6" style="dashed=1;endArrow=open;html=1;" target="u10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e24" edge="1" parent="1" source="u6" style="dashed=1;endArrow=open;html=1;" target="u11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e25" edge="1" parent="1" source="u11" style="dashed=1;endArrow=open;html=1;" target="u12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tTbzV4fHBRivQ-T1Pdb0-4" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Бронь мәртебесін өзгерту" vertex="1">
+          <mxGeometry height="50" width="220" x="410" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="tTbzV4fHBRivQ-T1Pdb0-6" edge="1" parent="1" style="endArrow=none;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="810" as="sourcePoint" />
+            <mxPoint x="424" y="861" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tTbzV4fHBRivQ-T1Pdb0-8" edge="1" parent="1" source="tTbzV4fHBRivQ-T1Pdb0-4" style="dashed=1;endArrow=open;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="930" />
+            </Array>
+            <mxPoint x="650" y="930" as="sourcePoint" />
+            <mxPoint x="740" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tTbzV4fHBRivQ-T1Pdb0-10" edge="1" parent="1" source="u19" style="dashed=1;endArrow=open;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;" target="u12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="990" y="270" as="sourcePoint" />
+            <mxPoint x="1161" y="289" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
