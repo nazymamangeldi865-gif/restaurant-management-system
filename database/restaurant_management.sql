@@ -1,4 +1,4 @@
-
+nnn
 CREATE DATABASE meiramkhana_db;
 GO
 
