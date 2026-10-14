@@ -5,6 +5,15 @@ GO
 USE meiramkhana_db;
 GO
 
+create table student(
+    sudent_id int Primary key,
+    name nvarchar(100),
+    age int,
+    city nvarchar(100));
+    
+    
+    
+    
 
 CREATE TABLE users (
     user_id INT IDENTITY(1,1) PRIMARY KEY,
