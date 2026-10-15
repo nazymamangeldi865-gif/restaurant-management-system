@@ -1,27 +1,12 @@
-﻿
-CREATE DATABASE meiramkhana_db;
-GO
 
-USE meiramkhana_db;
-GO
-
-
-    
-    
 CREATE TABLE users (
     user_id INT IDENTITY(1,1) PRIMARY KEY,
     aty NVARCHAR(100) NOT NULL,
     email NVARCHAR(100) UNIQUE NOT NULL,
     telefon NVARCHAR(20),
     qupiyasoz NVARCHAR(100) NOT NULL,
-    roli NVARCHAR(20) NOT NULL,
-
-    CHECK (roli IN ('client', 'manager', 'waiter', 'admin'))
+    roli NVARCHAR(20) NOT NULL
 );
-GO
-
-    create table studentd(student_id Int Primary key,
-    aty NVARCHAR(100)flsdsdksfmk
 
 CREATE TABLE restaurants (
     restaurant_id INT IDENTITY(1,1) PRIMARY KEY,
@@ -32,15 +17,8 @@ CREATE TABLE restaurants (
     sipattama NVARCHAR(MAX),
     reyting DECIMAL(2,1) DEFAULT 0,
     zhumys_uakyty NVARCHAR(100),
-
-    CHECK (reyting BETWEEN 0 AND 5),
-
-    FOREIGN KEY (manager_id)
-        REFERENCES users(user_id)
+    FOREIGN KEY (manager_id) REFERENCES users(user_id)
 );
-GO
-
-
 
 CREATE TABLE restaurant_tables (
     table_id INT IDENTITY(1,1) PRIMARY KEY,
@@ -48,39 +26,15 @@ CREATE TABLE restaurant_tables (
     ustel_nomeri INT NOT NULL,
     adam_sany INT NOT NULL,
     status NVARCHAR(20) DEFAULT 'available',
-
-    CHECK (adam_sany > 0),
-
-    CHECK (
-        status IN (
-            'available',
-            'reserved',
-            'occupied'
-        )
-    ),
-
-    FOREIGN KEY (restaurant_id)
-        REFERENCES restaurants(restaurant_id),
-
-    UNIQUE (restaurant_id, ustel_nomeri)
+    FOREIGN KEY (restaurant_id) REFERENCES restaurants(restaurant_id)
 );
-GO
-
-
--- 5. Мәзір кестесі
 
 CREATE TABLE menus (
     menu_id INT IDENTITY(1,1) PRIMARY KEY,
     restaurant_id INT NOT NULL,
     atauy NVARCHAR(100) NOT NULL,
-
-    FOREIGN KEY (restaurant_id)
-        REFERENCES restaurants(restaurant_id)
+    FOREIGN KEY (restaurant_id) REFERENCES restaurants(restaurant_id)
 );
-GO
-
-
--- 6. Тағамдар кестесі
 
 CREATE TABLE menu_items (
     item_id INT IDENTITY(1,1) PRIMARY KEY,
@@ -90,16 +44,8 @@ CREATE TABLE menu_items (
     sanaty NVARCHAR(50),
     bagasy DECIMAL(10,2) NOT NULL,
     kolzhetimdi BIT DEFAULT 1,
-
-    CHECK (bagasy > 0),
-
-    FOREIGN KEY (menu_id)
-        REFERENCES menus(menu_id)
+    FOREIGN KEY (menu_id) REFERENCES menus(menu_id)
 );
-GO
-
-
--- 7. Бронь кестесі
 
 CREATE TABLE bookings (
     booking_id INT IDENTITY(1,1) PRIMARY KEY,
@@ -110,31 +56,10 @@ CREATE TABLE bookings (
     uakyty TIME NOT NULL,
     adam_sany INT NOT NULL,
     status NVARCHAR(20) DEFAULT 'pending',
-
-    CHECK (adam_sany > 0),
-
-    CHECK (
-        status IN (
-            'pending',
-            'confirmed',
-            'cancelled',
-            'completed'
-        )
-    ),
-
-    FOREIGN KEY (client_id)
-        REFERENCES users(user_id),
-
-    FOREIGN KEY (restaurant_id)
-        REFERENCES restaurants(restaurant_id),
-
-    FOREIGN KEY (table_id)
-        REFERENCES restaurant_tables(table_id)
+    FOREIGN KEY (client_id) REFERENCES users(user_id),
+    FOREIGN KEY (restaurant_id) REFERENCES restaurants(restaurant_id),
+    FOREIGN KEY (table_id) REFERENCES restaurant_tables(table_id)
 );
-GO
-
-
--- 8. Тапсырыстар кестесі
 
 CREATE TABLE orders (
     order_id INT IDENTITY(1,1) PRIMARY KEY,
@@ -143,29 +68,9 @@ CREATE TABLE orders (
     tapsyrys_uakyty DATETIME2 DEFAULT SYSDATETIME(),
     status NVARCHAR(20) DEFAULT 'new',
     zhalpy_soma DECIMAL(10,2) DEFAULT 0,
-
-    CHECK (zhalpy_soma >= 0),
-
-    CHECK (
-        status IN (
-            'new',
-            'preparing',
-            'ready',
-            'completed',
-            'cancelled'
-        )
-    ),
-
-    FOREIGN KEY (client_id)
-        REFERENCES users(user_id),
-
-    FOREIGN KEY (restaurant_id)
-        REFERENCES restaurants(restaurant_id)
+    FOREIGN KEY (client_id) REFERENCES users(user_id),
+    FOREIGN KEY (restaurant_id) REFERENCES restaurants(restaurant_id)
 );
-GO
-
-
--- 9. Тапсырыс құрамы
 
 CREATE TABLE order_items (
     order_item_id INT IDENTITY(1,1) PRIMARY KEY,
@@ -173,20 +78,9 @@ CREATE TABLE order_items (
     item_id INT NOT NULL,
     sany INT NOT NULL,
     bir_dana_bagasy DECIMAL(10,2) NOT NULL,
-
-    CHECK (sany > 0),
-    CHECK (bir_dana_bagasy > 0),
-
-    FOREIGN KEY (order_id)
-        REFERENCES orders(order_id),
-
-    FOREIGN KEY (item_id)
-        REFERENCES menu_items(item_id)
+    FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    FOREIGN KEY (item_id) REFERENCES menu_items(item_id)
 );
-GO
-
-
--- 10. Төлемдер кестесі
 
 CREATE TABLE payments (
     payment_id INT IDENTITY(1,1) PRIMARY KEY,
@@ -195,32 +89,8 @@ CREATE TABLE payments (
     tolem_turi NVARCHAR(20) NOT NULL,
     status NVARCHAR(20) DEFAULT 'pending',
     tolem_uakyty DATETIME2 DEFAULT SYSDATETIME(),
-
-    CHECK (soma > 0),
-
-    CHECK (
-        tolem_turi IN (
-            'cash',
-            'card',
-            'online'
-        )
-    ),
-
-    CHECK (
-        status IN (
-            'pending',
-            'paid',
-            'refunded'
-        )
-    ),
-
-    FOREIGN KEY (order_id)
-        REFERENCES orders(order_id)
+    FOREIGN KEY (order_id) REFERENCES orders(order_id)
 );
-GO
-
-
--- 11. Пікірлер кестесі
 
 CREATE TABLE reviews (
     review_id INT IDENTITY(1,1) PRIMARY KEY,
@@ -229,19 +99,9 @@ CREATE TABLE reviews (
     bagasy INT NOT NULL,
     pikir NVARCHAR(MAX),
     jazylgan_uakyty DATETIME2 DEFAULT SYSDATETIME(),
-
-    CHECK (bagasy BETWEEN 1 AND 5),
-
-    FOREIGN KEY (client_id)
-        REFERENCES users(user_id),
-
-    FOREIGN KEY (restaurant_id)
-        REFERENCES restaurants(restaurant_id)
+    FOREIGN KEY (client_id) REFERENCES users(user_id),
+    FOREIGN KEY (restaurant_id) REFERENCES restaurants(restaurant_id)
 );
-GO
-
-
--- 12. Хабарламалар кестесі
 
 CREATE TABLE notifications (
     notification_id INT IDENTITY(1,1) PRIMARY KEY,
@@ -250,63 +110,43 @@ CREATE TABLE notifications (
     turi NVARCHAR(30),
     okyldy BIT DEFAULT 0,
     zhiberilgen_uakyty DATETIME2 DEFAULT SYSDATETIME(),
-
-    FOREIGN KEY (user_id)
-        REFERENCES users(user_id)
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
-GO
 
-
--- 13. Пайдаланушыларды енгізу
 
 INSERT INTO users
 (aty, email, telefon, qupiyasoz, roli)
 VALUES
-(N'Назым Амангелді', 'nazym@gmail.com', '87001111101', '12345', 'client'),
-(N'Айгерім Нұрлан', 'aigerim@gmail.com', '87001111102', '12345', 'client'),
-(N'Диас Серік', 'dias@gmail.com', '87001111103', '12345', 'client'),
-(N'Мадина Асқар', 'madina@gmail.com', '87001111104', '12345', 'client'),
-(N'Арман Дәулет', 'arman@gmail.com', '87001111105', '12345', 'client'),
+(N'Назым Амангелді', 'nazym@gmail.com', '87001111101', 'Nazym@2026!', 'client'),
+(N'Айгерім Нұрлан', 'aigerim@gmail.com', '87001111102', 'Aigerim@2026!', 'client'),
+(N'Диас Серік', 'dias@gmail.com', '87001111103', 'Dias@2026!', 'client'),
+(N'Мадина Асқар', 'madina@gmail.com', '87001111104', 'Madina@2026!', 'client'),
+(N'Арман Дәулет', 'arman@gmail.com', '87001111105', 'Arman@2026!', 'client'),
+(N'Әлихан Серік', 'alikhan.manager@gmail.com', '87002222201', 'Alikhan@2026!', 'manager'),
+(N'Дана Болат', 'dana.manager@gmail.com', '87002222202', 'Dana@2026!', 'manager'),
+(N'Нұрсұлтан Қайрат', 'nursultan.manager@gmail.com', '87002222203', 'Nursultan@2026!', 'manager'),
+(N'Данияр Асқар', 'daniyar.waiter@gmail.com', '87003333301', 'Daniyar@2026!', 'waiter'),
+(N'Әсем Еркін', 'asem.waiter@gmail.com', '87003333302', 'Asem@2026!', 'waiter'),
+(N'Бекзат Марат', 'bekzat.waiter@gmail.com', '87003333303', 'Bekzat@2026!', 'waiter'),
+(N'Жүйе әкімшісі', 'admin@gmail.com', '87004444401', 'Admin@2026!', 'admin'),
+(N'Камила Руслан', 'kamila@gmail.com', '87005555501', 'Kamila@2026!', 'client'),
+(N'Руслан Айбек', 'ruslan@gmail.com', '87005555502', 'Ruslan@2026!', 'client'),
+(N'Мирас Ержан', 'miras.waiter@gmail.com', '87005555503', 'Miras@2026!', 'waiter');
 
-(N'Әлихан Серік', 'alikhan.manager@gmail.com', '87002222201', '12345', 'manager'),
-(N'Дана Болат', 'dana.manager@gmail.com', '87002222202', '12345', 'manager'),
-(N'Нұрсұлтан Қайрат', 'nursultan.manager@gmail.com', '87002222203', '12345', 'manager'),
-
-(N'Данияр Асқар', 'daniyar.waiter@gmail.com', '87003333301', '12345', 'waiter'),
-(N'Әсем Еркін', 'asem.waiter@gmail.com', '87003333302', '12345', 'waiter'),
-(N'Бекзат Марат', 'bekzat.waiter@gmail.com', '87003333303', '12345', 'waiter'),
-
-(N'Жүйе әкімшісі', 'admin@gmail.com', '87004444401', '12345', 'admin'),
-
-(N'Камила Руслан', 'kamila@gmail.com', '87005555501', '12345', 'client'),
-(N'Руслан Айбек', 'ruslan@gmail.com', '87005555502', '12345', 'client'),
-(N'Мирас Ержан', 'miras.waiter@gmail.com', '87005555503', '12345', 'waiter');
-GO
-
-
--- 14. Мейрамханаларды енгізу
 
 INSERT INTO restaurants
 (manager_id, atauy, mekenzhai, ashana_turi, sipattama, reyting, zhumys_uakyty)
 VALUES
 (6, N'Gastro Prive', N'Алматы, Абылай хан 120',
  N'Еуропалық асхана', N'Заманауи мейрамхана', 4.8, N'10:00-00:00'),
-
 (7, N'Qazaq Gourmet', N'Алматы, Достық 55',
  N'Қазақ асханасы', N'Ұлттық тағамдар мейрамханасы', 4.7, N'09:00-23:00'),
-
 (8, N'Sakura', N'Алматы, Әл-Фараби 77',
  N'Жапон асханасы', N'Суши және жапон тағамдары', 4.6, N'11:00-00:00'),
-
 (6, N'Bella Italia', N'Алматы, Төле би 101',
  N'Итальян асханасы', N'Паста және пицца мейрамханасы', 4.5, N'10:00-23:30'),
-
 (7, N'Steak House', N'Алматы, Назарбаев 88',
  N'Ет тағамдары', N'Стейк және гриль тағамдары', 4.9, N'12:00-01:00');
-GO
-
-
--- 15. Үстелдерді енгізу
 
 INSERT INTO restaurant_tables
 (restaurant_id, ustel_nomeri, adam_sany, status)
@@ -315,7 +155,6 @@ VALUES
 (1, 2, 4, 'reserved'),
 (1, 3, 6, 'available'),
 (1, 4, 4, 'occupied'),
-
 (2, 1, 2, 'available'),
 (2, 2, 4, 'available'),
 (2, 3, 6, 'reserved'),
@@ -335,10 +174,6 @@ VALUES
 (5, 2, 4, 'available'),
 (5, 3, 6, 'available'),
 (5, 4, 8, 'available');
-GO
-
-
--- 16. Мәзірлерді енгізу
 
 INSERT INTO menus
 (restaurant_id, atauy)
@@ -348,10 +183,6 @@ VALUES
 (3, N'Sakura мәзірі'),
 (4, N'Bella Italia мәзірі'),
 (5, N'Steak House мәзірі');
-GO
-
-
--- 17. Тағамдарды енгізу
 
 INSERT INTO menu_items
 (menu_id, atauy, sipattama, sanaty, bagasy)
@@ -380,10 +211,8 @@ VALUES
 (5, N'Филе миньон', N'Жұмсақ сиыр еті', N'Стейк', 10500),
 (5, N'Гриль көкөністер', N'Грильде пісірілген көкөніс', N'Гарнир', 2800),
 (5, N'Шоколад фондан', N'Ыстық шоколад десерті', N'Десерт', 3200);
-GO
 
 
--- 18. Броньдарды енгізу
 
 INSERT INTO bookings
 (client_id, restaurant_id, table_id, kuni, uakyty, adam_sany, status)
@@ -405,10 +234,7 @@ VALUES
 (13, 3, 12, '2026-10-22', '20:00', 6, 'pending'),
 (14, 4, 16, '2026-10-23', '19:00', 8, 'confirmed'),
 (1, 5, 20, '2026-10-24', '21:00', 8, 'confirmed');
-GO
 
-
--- 19. Тапсырыстарды енгізу
 
 INSERT INTO orders
 (client_id, restaurant_id, status, zhalpy_soma)
@@ -430,10 +256,6 @@ VALUES
 (13, 3, 'completed', 8400),
 (14, 4, 'preparing', 8800),
 (1, 5, 'completed', 13300);
-GO
-
-
--- 20. Тапсырыс құрамын енгізу
 
 INSERT INTO order_items
 (order_id, item_id, sany, bir_dana_bagasy)
@@ -467,10 +289,7 @@ VALUES
 
 (10, 18, 1, 10500),
 (10, 19, 1, 2800);
-GO
 
-
--- 21. Төлемдерді енгізу
 
 INSERT INTO payments
 (order_id, soma, tolem_turi, status)
@@ -492,10 +311,6 @@ VALUES
 (13, 8400, 'card', 'paid'),
 (14, 8800, 'cash', 'pending'),
 (15, 13300, 'online', 'paid');
-GO
-
-
--- 22. Пікірлерді енгізу
 
 INSERT INTO reviews
 (client_id, restaurant_id, bagasy, pikir)
@@ -517,10 +332,8 @@ VALUES
 (13, 3, 4, N'Жапон тағамдары ұнады'),
 (14, 4, 5, N'Отбасымен келуге жақсы'),
 (1, 5, 5, N'Ет тағамдары өте жақсы');
-GO
 
 
--- 23. Хабарламаларды енгізу
 
 INSERT INTO notifications
 (user_id, habar, turi)
@@ -542,10 +355,7 @@ VALUES
 (13, N'Төлем қабылданды', N'payment'),
 (14, N'Тапсырыс қабылданды', N'order'),
 (1, N'Бронь туралы еске салу', N'booking');
-GO
 
-
--- 24. Мәліметтерді көру
 
 SELECT * FROM users;
 SELECT * FROM restaurants;
@@ -558,34 +368,5 @@ SELECT * FROM order_items;
 SELECT * FROM payments;
 SELECT * FROM reviews;
 SELECT * FROM notifications;
-GO
 
 
--- 25. Мәліметті өзгерту
-
-UPDATE bookings
-SET status = 'confirmed'
-WHERE booking_id = 2;
-GO
-
-SELECT * FROM bookings;
-GO
-
-
-UPDATE menu_items
-SET bagasy = 3800
-WHERE item_id = 1;
-GO
-
-SELECT * FROM menu_items;
-GO
-
-
--- 26. Мәліметті жою
-
-DELETE FROM reviews
-WHERE review_id = 15;
-GO
-
-SELECT * FROM reviews;
-GO
