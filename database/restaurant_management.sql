@@ -1,4 +1,4 @@
-
+Test
 CREATE TABLE users (
     user_id INT IDENTITY(1,1) PRIMARY KEY,
     aty NVARCHAR(100) NOT NULL,
